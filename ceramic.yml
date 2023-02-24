@@ -8,8 +8,8 @@ app:
     plugins:
         #- arcade
         #- nape
-        #- ui
-        #- elements
+        - ui
+        - elements
 
     libs:
         #- somelib

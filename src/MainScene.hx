@@ -32,7 +32,7 @@ class MainScene extends Scene
 
 	override function create()
 	{
-		assets.sound(Sounds.MUSIC__AUDIO).play(0, true, 0.4);
+		assets.sound(Sounds.MUSIC__AUDIO).play(0, true, 0.1);
 
 		ana = Clay.app.audio.context.createAnalyser();
 		ana.fftSize = 256;
@@ -51,13 +51,24 @@ class MainScene extends Scene
 		swagSex.scale(0.0001);
 		swagSex.alpha = 0;
 
-		barIt = 10;
-		for (i in 0...barIt)
+		barIt = 20;
+		// barshit.pos(((width * 0.5) - 63) + (i * 15), (swagSex.y - swagSex.height) + 60);
+		for (i in 0...10)
 		{
 			var barshit:Quad = new Quad();
 			barshit.size(10, 100);
-			barshit.pos((width * 0.5) + (i * 15), (swagSex.y - swagSex.height) + 10);
+			barshit.pos(((width * 0.5) - 63) + (i * 15), (swagSex.y - swagSex.height));
 			barshit.rotation = 180;
+			barshit.color = Color.SLATEGREY;
+			bars.push(barshit);
+			add(barshit);
+		}
+
+		for (i in 0...10)
+		{
+			var barshit:Quad = new Quad();
+			barshit.size(10, 100);
+			barshit.pos(((width * 0.5) - 63) + (i * 15), (swagSex.y + swagSex.height));
 			barshit.color = Color.SLATEGREY;
 			bars.push(barshit);
 			add(barshit);
@@ -92,7 +103,7 @@ class MainScene extends Scene
 			{
 				bars[i].transition(BEZIER(0.4, 0, 0.2, 1), 0.05, bar ->
 				{
-					bar.scaleY = sampleDat[i] / 130;
+					bar.scaleY = sampleDat[i] / 200;
 				});
 			}
 		}
