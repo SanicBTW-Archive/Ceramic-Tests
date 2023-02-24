@@ -1,0 +1,19 @@
+{
+    "window.title": "${activeEditorShort} — testceramic",
+    "search.exclude": {
+        "**/.git": true,
+        "**/node_modules": true,
+        "**/tmp": true,
+        "**/out": true
+    },
+    "haxe.executable": "../../../ceramic/tools/haxe",
+    "haxelib.executable": "../../../ceramic/tools/haxelib",
+    "[haxe]": {
+		"editor.formatOnSave": true,
+		"editor.formatOnPaste": true,
+		"editor.codeActionsOnSave": {
+			"source.sortImports": true
+		}
+	},
+	"haxe.enableExtendedIndentation": true
+}
